@@ -20,4 +20,13 @@ class Article extends Model
 
         return $this->belongsTo(User::class);
     }
+
+     // an article has many tags
+    // a tag has many articles as well
+    // we need a many to many relationships system 
+
+    public function tags(){
+        
+        return $this->belongsToMany(Tag::class)->withTimestamps();
+    }
 }

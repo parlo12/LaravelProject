@@ -12,7 +12,13 @@
                         class="image image-full" /> 
                     </p>
 
-                    {{ $article->body }}
+                    {{$article->body}}
+
+                    <P style="margin-top: 1em">
+                        @foreach ($article->tags as $tag)
+                            <a href="/articles?tag={{$tag->name}}">{{$tag->name}}</a>
+                        @endforeach
+                    </P>
                 </div>
             </div>
         </div>
