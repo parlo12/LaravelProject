@@ -5,6 +5,7 @@
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
+        @if (Auth::check())
             <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
 
             <form method="POST" action="/articles">
@@ -74,6 +75,11 @@
                 </div>
 
             </form>
+
+        @else
+
+            <p>You need to be logged in to create new articles!</p>
+        @endif
 
         </div>
     </div>

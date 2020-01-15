@@ -1,6 +1,7 @@
 @extends('layout')
      @section('content')
         <div id="wrapper">
+        @if (Auth::check())
             <div id="page" class="container">
                 <div id="content">
                     <div class="title">
@@ -21,5 +22,12 @@
                     </P>
                 </div>
             </div>
+        @else
+        <div id="page" class="container">
+            <div id="content">
+            <p>You must be logged in to view all article</p>
+            </div>
+        </div>
+        @endif
         </div>
      @endsection

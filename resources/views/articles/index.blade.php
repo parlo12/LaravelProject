@@ -2,7 +2,8 @@
     @section('content')
     <div id="wrapper">
         <div id="page" class="container">
-            @forelse ($articles as $article)
+             @if(Auth::check())
+                @forelse ($articles as $article)
                 <div class="content">
                     <div class="title">
                         <h2>
@@ -17,9 +18,12 @@
                 <p>
                     <img src="/images/banner.jpg" alt="" class="image image-full">
                 </p>
-            @empty
+                @empty
                 <p>No relevant articles yet.</p>
-            @endforelse
+                @endforelse
+            @else
+                <p>You must be logged in to view all articles on this page!</p>
+            @endif
         </div>
 
     </div>

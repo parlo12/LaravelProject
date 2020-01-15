@@ -6,6 +6,7 @@
 @section('content')
 <div id="wrapper">
         <div id="page" class="container">
+        @if (Auth::check())
             <h1 class="heading has-text-weight-bold is-size-4">Update Article</h1>
 
             <form method="POST" action="/articles/{{$article->id}}">
@@ -42,6 +43,9 @@
                 </div>
 
             </form>
+        @else
+            <p>You need to be logged in to edit the article You choosed</p>
+        @endif
 
         </div>
     </div>
